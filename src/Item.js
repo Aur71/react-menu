@@ -1,7 +1,7 @@
 import React from 'react';
 
 export const Item = ({ item }) => {
-  const { category, desc, id, img, price, title } = item;
+  const { desc, img, title } = item;
 
   return (
     <div className="item">

@@ -1,5 +1,5 @@
 import React from 'react';
-import { useState, useEffect, useCallback } from 'react';
+import { useState } from 'react';
 import { Item } from './Item';
 import data from './data';
 import items from './data';
@@ -12,15 +12,11 @@ const App = () => {
   const categoryFilter = (category) => {
     setMenu(data);
     if (category === 'All') {
-      setMenu(data);
+      return setMenu(data);
     }
 
-    const newMenu = data.filter((item) => {
-      if (item.category === category) {
-        return item;
-      }
-    });
-    setMenu(newMenu);
+    const newMenu = data.filter((item) => item.category === category);
+    return setMenu(newMenu);
   };
 
   return (
